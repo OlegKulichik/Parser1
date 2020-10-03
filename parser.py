@@ -24,7 +24,7 @@ class Parser:
 
         if atrr is not None and atrr1 is None:
             ttm = re.findall(self._double_tag.format(tag,atrr),self.read_file())
-        elif atrr and atrr1:
+        elif atrr is not None and atrr1 is not None:
             ttm = re.findall(self._triple_tag.format(tag,atrr,atrr1),self.read_file())
         elif tag:
             ttm = re.findall(self._single_tag.format(tag),self.read_file())
